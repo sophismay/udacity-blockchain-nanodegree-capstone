@@ -6,25 +6,28 @@ contract('TestERC721Mintable', accounts => {
     const account_one = accounts[0];
     const account_two = accounts[1];
     const account_three = accounts[2];
+
+    const name = "Bitland Property";
+    const symbol = "BLP";
+    const uri = "https://s3-us-west-2.amazonaws.com/udacity-blockchain/capstone/";
     let id = 0;
 
     describe('match erc721 spec', function () {
         beforeEach(async function () { 
-            this.contract = await ERC721MintableComplete.new({from: account_one});
+            this.contract = await ERC721MintableComplete.new(name, symbol, {from: account_one});
             
             // TODO: mint multiple tokens
-            let result = await this.contract.mint(account_two, id++, "http://www.uri.com", { from: account_one, gas: 400000 });
-            await this.contract.mint(account_two, id++, "http://www.uri.com", { from: account_one, gas: 400000 });
-            await this.contract.mint(account_two, id++, "http://www.uri.com", { from: account_one, gas: 400000 });
-            await this.contract.mint(account_two, id++, "http://www.uri.com", { from: account_one, gas: 400000 });
-            await this.contract.mint(account_two, id++, "http://www.uri.com", { from: account_one, gas: 400000 });
-            await this.contract.mint(account_two, id++, "http://www.uri.com", { from: account_one, gas: 400000 });
-            await this.contract.mint(account_two, id++, "http://www.uri.com", { from: account_one, gas: 400000 });
-            await this.contract.mint(account_two, id++, "http://www.uri.com", { from: account_one, gas: 400000 });
-            await this.contract.mint(account_two, id++, "http://www.uri.com", { from: account_one, gas: 400000 });
-            await this.contract.mint(account_three, id++, "http://www.uri.com", { from: account_one, gas: 400000 });
-            await this.contract.mint(account_three, id++, "http://www.uri.com", { from: account_one, gas: 400000 });
-            //assert.equal(result, true, "token minted");
+            let result = await this.contract.mint(account_two, id++, uri, { from: account_one, gas: 400000 });
+            await this.contract.mint(account_two, id++, uri, { from: account_one, gas: 400000 });
+            await this.contract.mint(account_two, id++, uri, { from: account_one, gas: 400000 });
+            await this.contract.mint(account_two, id++, uri, { from: account_one, gas: 400000 });
+            await this.contract.mint(account_two, id++, uri, { from: account_one, gas: 400000 });
+            await this.contract.mint(account_two, id++, uri, { from: account_one, gas: 400000 });
+            await this.contract.mint(account_two, id++, uri, { from: account_one, gas: 400000 });
+            await this.contract.mint(account_two, id++, uri, { from: account_one, gas: 400000 });
+            await this.contract.mint(account_two, id++, uri, { from: account_one, gas: 400000 });
+            await this.contract.mint(account_three, id++, uri, { from: account_one, gas: 400000 });
+            await this.contract.mint(account_three, id++, uri, { from: account_one, gas: 400000 });
         })
 
         it('should return total supply', async function () { 
@@ -70,7 +73,7 @@ contract('TestERC721Mintable', accounts => {
 
     describe('have ownership properties', function () {
         beforeEach(async function () { 
-            this.contract = await ERC721MintableComplete.new({ from: account_one });
+            this.contract = await ERC721MintableComplete.new(name, symbol, { from: account_one });
         })
 
         it('should fail when minting when address is not contract owner', async function () { 

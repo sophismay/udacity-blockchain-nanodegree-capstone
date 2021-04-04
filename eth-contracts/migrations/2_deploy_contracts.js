@@ -1,10 +1,12 @@
 // migrating the appropriate contracts
-var SquareVerifier = artifacts.require("./SquareVerifier.sol");
 var SolnSquareVerifier = artifacts.require("./SolnSquareVerifier.sol");
-var BitlandProperty = artifacts.require("./BitlandProperty.sol")
+var BitlandProperty = artifacts.require("./BitlandProperty.sol");
+var Verifier = artifacts.require("./Verifier.sol");
+const name = "Bitland Property";
+const symbol = "BLP";
 
 module.exports = function(deployer) {
-  deployer.deploy(BitlandProperty);
-  deployer.deploy(SquareVerifier);
-  deployer.deploy(SolnSquareVerifier);
+  deployer.deploy(BitlandProperty, name, symbol);
+  deployer.deploy(SolnSquareVerifier, name, symbol);
+  deployer.deploy(Verifier);
 };

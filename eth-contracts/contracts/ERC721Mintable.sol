@@ -552,9 +552,11 @@ contract ERC721Metadata is ERC721Enumerable, usingOraclize {
 //      -returns a true boolean upon completion of the function
 //      -calls the superclass mint and setTokenURI functions
 
-contract BitlandProperty is ERC721Metadata("Bitland Property", "BLP", "https://s3-us-west-2.amazonaws.com/udacity-blockchain/capstone/") {
+contract BitlandProperty is ERC721Metadata {
     
-    constructor() public {}
+    string constant private TOKEN_URI = "https://s3-us-west-2.amazonaws.com/udacity-blockchain/capstone/";
+    
+    constructor(string memory name, string memory symbol) public ERC721Metadata(name, symbol, TOKEN_URI) {}
 
     function mint(address to, uint256 tokenId, string memory tokenURI) public onlyOwner returns(bool) {
         super._mint(to, tokenId);
