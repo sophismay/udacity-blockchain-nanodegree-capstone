@@ -33,13 +33,12 @@ This project was developed and tested using [truffle](https://www.npmjs.com/pack
 ### Environmental Variables
 
 `.env` file should have the following:
-"""
-bash(
-    HOST=XXXXXX // infura, POKT or other host
+```bash
+    HOST=XXXXXX // full infura host (also, POKT or other host)
     PK=XXXX // private key of wallet
     MNEMONIC=XXXX // mnemonic of wallet
-)
-"""
+
+```
 
 ### Deployment
 `truffle compile`
