@@ -1,6 +1,42 @@
 # Udacity Blockchain Capstone
 
-The capstone will build upon the knowledge you have gained in the course in order to build a decentralized housing product. 
+Smart contracts for a decentralized housing product. This is deployed with a ZK integration for verification before minting ERC721 tokens.
+
+# Getting Started
+
+## Prerequisites
+
+This project was developed and tested using [truffle](https://www.npmjs.com/package/truffle) and truffle [ganache](https://www.trufflesuite.com/ganache).
+
+`npm install -g truffle`
+
+## Installing Dependencies
+
+`npm install` in root folder of project.
+
+## Local Development
+
+### Compiling
+
+`truffle compile`
+
+### Migration
+
+`truffle migrate`
+
+### Testing
+
+`truffle test`
+
+## Deploying to Rinkeby
+
+### Environmental Variables
+
+`.env` file should have the following:
+
+
+# Project Structure
+
 
 # Project Resources
 

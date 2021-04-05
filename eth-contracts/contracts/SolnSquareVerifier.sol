@@ -76,14 +76,14 @@ contract SolnSquareVerifier is BitlandProperty {
     * @dev mint new NFT only after verifying solution
     *
     * */
-    function mint(
+    function mintOne(
                 address to, 
                 uint256 tokenId,
-                uint[2] memory a,
-                uint[2][2] memory b,
-                uint[2] memory c, 
-                uint[2] memory input
-                ) public onlyOwner {
+                uint[2] calldata a,
+                uint[2][2] calldata b,
+                uint[2] calldata c, 
+                uint[2] calldata input
+                ) external onlyOwner {
         bytes32 key = keccak256(abi.encodePacked(tokenId, to));
         require(uniqueSolutions[key].client == address(0), "SOLN SQUARE MINT: SOLUTION ALREADY EXISTS!");
         require(VerifierContract.verifyTx(a, b, c, input), "SOLN SQUARE MINT: WRONG VERIFICATION!");
