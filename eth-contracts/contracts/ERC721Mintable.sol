@@ -166,19 +166,19 @@ contract ERC721 is Pausable, ERC165 {
         require(_tokenApprovals[tokenId] != to, "APPROVE: ADDRESS ALREADY APPROVED");
 
         // TODO require the msg sender to be the owner of the contract or isApprovedForAll() to be true
-        //require(isApprovedForAll(msg.sender, to), "APPROVE: NOT APPROVED FOR ALL");
-        require(msg.sender == getOwner() || isApprovedForAll(msg.sender, to), "APPROVE: NOT CONTRACT OWNER NOR APPROVED FOR ALL!");
+        //require(isApprovedForAll(getOwner(), msg.sender), "APPROVE: NOT APPROVED FOR ALL");
+        require(msg.sender == getOwner() || isApprovedForAll(getOwner(), msg.sender), "APPROVE: NOT CONTRACT OWNER NOR APPROVED FOR ALL!");
 
         // TODO add 'to' address to token approvals
         _tokenApprovals[tokenId] = to;
 
         // TODO emit Approval Event
-        emit Approval(msg.sender, to, tokenId);
+        emit Approval(getOwner(), to, tokenId);
     }
 
     function getApproved(uint256 tokenId) public view returns (address) {
         // TODO return token approval if it exists
-        require(_tokenApprovals[tokenId] != address(0), "GET APPROVED: TOKEN APPROVAL DOES NOT EXIST!");
+        require(_tokenOwner[tokenId] != address(0), "GET APPROVED: TOKEN OWNER DOES NOT EXIST!");
         return _tokenApprovals[tokenId];
     }
 
@@ -510,11 +510,11 @@ contract ERC721Metadata is ERC721Enumerable, usingOraclize {
 
     // TODO: create external getter functions for name, symbol, and baseTokenURI
 
-    function tokenName() external view returns(string memory) {
+    function name() external view returns(string memory) {
         return _name;
     }
 
-    function tokenSymbol() external view returns(string memory) {
+    function symbol() external view returns(string memory) {
         return _symbol;
     }
 

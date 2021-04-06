@@ -41,21 +41,41 @@ This project was developed and tested using [truffle](https://www.npmjs.com/pack
 ```
 
 ### Deployment
-`truffle compile`
+`truffle compile` <br>
 `truffle migrate --reset --network rinkeby`
+
+## Running Zokrates and generating verification
+- `docker run -v <path to your project folder>:/home/zokrates/code -ti zokrates/zokrates /bin/bash`
+- compile program `zokrates compile -i square.code`
+- generate trusted setup `zokrates setup`
+- compute witness `zokrates compute-witness -a 3 9`
+- generate proof `zokrates generate-proof`
+- export verifier `zokrates export-verifier`
+- copy `verifier.sol` to contracts
+<br>
+** key files are removed from git versioning **
+
+## Minting tokens
+Run `node mint-tokens.js`
 
 
 ## Contracts & Transactions
 
-### Contract
-`0x1F66257561De32eb714D8acAc3E4B74E495e8F7B`
+### SolnSquareVerifier Contract Address
+`0x1a5cc302bbc322927e1cf84864f56688cbbbc7c9`
 
 ### Contract creation Transaction Hash
-`0xea4ab50adae7a9b743c9e7ed6d5db61fa241af7284a0248960b7d341494da5a6`
+[Created at](https://rinkeby.etherscan.io/tx/0xc536b9a6a4ae7bdee0ec47c5e647b65af8b56f5097f889be2d12314dc3826814)
 
-### Token Mint Transaction Hash
-`0xd5177556d3532516b5ca86d714ca2f64d62f2c318d1487089f5ea9381ef77d7e`
+### One of 10 Token Mint Transactions
+- [1](https://rinkeby.etherscan.io/tx/0xe9385f926a7747e32c500ffdc59ff82e649828c35e4f92a01133b9bfabd952b3)
 
+### Sale transactions (from buyer)
+- [1](https://rinkeby.etherscan.io/tx/0xe115b7b8e1e4d18f8f01d59198c6a9d2dec45a4adb8b77c314e60f3638544556)
+- [2](https://rinkeby.etherscan.io/tx/0x1ac42bd00f51b94e8742205841c5cd49ac7dd68ef13e0659cb6e4aec1b8f6d25)
+- [3](https://rinkeby.etherscan.io/tx/0xabae2843194d51bf8c80281e4aa4a8f1f26f43e30353dc7499940e7dfbdc6d9d)
+- [4](https://rinkeby.etherscan.io/tx/0x7c3b1811400db5c164cecabde7d1dea9233ab5a55cc9bf1c40cad3eb742259b9)
+- [5](https://rinkeby.etherscan.io/tx/0x0c5636e3cf081b21e18cd5a38da57d03a51c65ff1bafc140b1ea2900f96e61d3)
 
 
 # Project Resources
