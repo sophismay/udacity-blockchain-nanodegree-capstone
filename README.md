@@ -59,6 +59,10 @@ This project was developed and tested using [truffle](https://www.npmjs.com/pack
 Run `node mint-tokens.js`
 
 
+## Marketplace Storefront
+[Marketplace Storefront](https://testnets.opensea.io/collection/bitland-property-2)
+
+
 ## Contracts & Transactions
 
 ### SolnSquareVerifier Contract Address
@@ -76,6 +80,18 @@ Run `node mint-tokens.js`
 - [3](https://rinkeby.etherscan.io/tx/0xabae2843194d51bf8c80281e4aa4a8f1f26f43e30353dc7499940e7dfbdc6d9d)
 - [4](https://rinkeby.etherscan.io/tx/0x7c3b1811400db5c164cecabde7d1dea9233ab5a55cc9bf1c40cad3eb742259b9)
 - [5](https://rinkeby.etherscan.io/tx/0x0c5636e3cf081b21e18cd5a38da57d03a51c65ff1bafc140b1ea2900f96e61d3)
+
+
+## Contract ABIs
+
+#### ERC721Mintable.json
+`./eth-contracts/build/contracts/BitlandProperty.json`
+
+#### Verifier.json
+`eth-contracts/build/contracts/Verifier.json`
+
+#### SolnSquareVerifier.json
+`eth-contracts/build/contracts/SolnSquareVerifier.json`
 
 
 # Project Resources

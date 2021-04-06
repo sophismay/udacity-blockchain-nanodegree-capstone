@@ -28,7 +28,7 @@ contract('TestSolnSquareVerifier', (accounts) => {
             const tokenId = 1;
             let result;
             try {
-                result  = await this.contract.mint(account_two, 1, proof_values[0], proof_values[1], proof_values[2], inputs); //, { from: account_one, gas: 4000000 });
+                result  = await this.contract.mintOne(account_two, 1, proof_values[0], proof_values[1], proof_values[2], inputs); //, { from: account_one, gas: 4000000 });
                 //console.log(result);
             } catch (e) {
                 console.log(e);
