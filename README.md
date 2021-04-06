@@ -59,8 +59,8 @@ This project was developed and tested using [truffle](https://www.npmjs.com/pack
 Run `node mint-tokens.js`
 
 
-## Marketplace Storefront
-[Marketplace Storefront](https://testnets.opensea.io/collection/bitland-property-2)
+## Marketplace Storefront (Opensea Rinkeby)
+[Marketplace Storefront](https://testnets.opensea.io/collection/bitland-property-2) <br>
 [Link 2](https://testnets.opensea.io/assets/bitland-property-2)
 
 ## Contracts & Transactions
