@@ -61,7 +61,7 @@ Run `node mint-tokens.js`
 
 ## Marketplace Storefront
 [Marketplace Storefront](https://testnets.opensea.io/collection/bitland-property-2)
-
+[Link 2](https://testnets.opensea.io/assets/bitland-property-2)
 
 ## Contracts & Transactions
 
